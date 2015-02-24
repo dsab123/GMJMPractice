@@ -66,7 +66,7 @@ public class AppTest {
 	}
 	
 	@Test
-	public void reverse_NullInput_ShouldReturnEmptyString() {
+	public void reverse_EmptyInput_ShouldReturnEmptyString() {
 		String empty = "";
 		
 		String reversedEmpty = App.reverse(empty);
@@ -74,11 +74,16 @@ public class AppTest {
 		assertThat(empty, is(equalTo(reversedEmpty)));
 	}
 	
-	@Test(expected = Exception.class)
 	public void reverse_OneCharInput_ThrowsException() {
 		String oneChar = "a";
 		
 		String reversedOneChar = App.reverse(oneChar);
+	}
+	
+	@Test(expected = Exception.class)
+	public void reverse_NullInput_ThrowsException() {
+		
+		String reversedOneChar = App.reverse(null);
 	}
 	
 }

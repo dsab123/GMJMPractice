@@ -10,9 +10,10 @@ import java.util.List;
 public class App 
 {
 	int age;
+	final static int DEFAULT_AGE = 0;
 
 	public App() {
-		age = 4;
+		age = DEFAULT_AGE;
 	}
 
 	public void setAge(int age) {
@@ -24,6 +25,9 @@ public class App
 	}
 
 	public static String reverse(String s) {
+		if (s == null)
+			throw new NullPointerException();
+		
 		List<String> tempArray = new ArrayList<String>(s.length());
 		
 		for (int i = 0; i < s.length(); i++) {
@@ -44,6 +48,4 @@ public class App
 		App a = new App();
 		System.out.println("App.age: " + a.getAge());
 	}
-	
-	
 }
